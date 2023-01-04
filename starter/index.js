@@ -86,3 +86,20 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+//jan-2010 to Feb-2017 
+
+//Greatest Profit with Math.max
+let numberArray = []; 
+for (i=0; i < finances.length; i++) {
+    numberArray.push(finances[i][1]); 
+}
+let max = Math.max.apply(null, numberArray);
+
+let dateOfMax = ""; 
+for (i=0; i < finances.length; i++) { 
+    if (finances[i][1] === max) {
+        dateOfMax = finances[i][0];
+    }; 
+}
+
+console.log("Month of Greatest Profit: " + dateOfMax + " (" + max + ")"); 
