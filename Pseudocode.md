@@ -1,9 +1,9 @@
 totalMonths - finances.length
 
 Data provided as net profit of loss for each month
-totalProfit = sum of all figures = sum of all finances[x][1]
+netProfit = sum of all figures = sum of all finances[x][1]
 
-averageProfit = sum profit or loss per month = totalProfit / totalMonths
+averageProfit = sum profit or loss per month = netProfit / totalMonths
 
 bigInc = (biggest increase) find biggest finances[x][1] in array
 

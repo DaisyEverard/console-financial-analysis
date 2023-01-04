@@ -92,7 +92,7 @@ console.log("Financial Analysis");
 console.log("--------------"); 
 // #Months
 const numMonths = finances.length; 
-console.log("Number of Months: " + numMonths); 
+console.log("Number of months: " + numMonths); 
 
 // Net Profit
 let netProfit = 0; 
@@ -110,7 +110,7 @@ let numberArray = [];
 for (i=0; i < finances.length; i++) {
     numberArray.push(finances[i][1]); 
 }
-let max = Math.max.apply(null, numberArray);
+const max = Math.max.apply(null, numberArray);
 
 let dateOfMax = ""; 
 for (i=0; i < finances.length; i++) { 
@@ -123,7 +123,7 @@ console.log("Month of Greatest Profit: " + dateOfMax + " ($" + max + ")");
 
 
 //Greatest Loss with Math.min 
-let min = Math.min.apply(null, numberArray);
+const min = Math.min.apply(null, numberArray);
 
 let dateOfMin = ""; 
 for (i=0; i < finances.length; i++) { 
@@ -134,7 +134,7 @@ for (i=0; i < finances.length; i++) {
 console.log("Month of Greatest Loss: " + dateOfMin + " ($" + min + ")"); 
 
 
-//Max Profit and Date Using reduce()
+//MAX PROFIT AND DATE USING reduce()
 /*let numberArray = []; 
 for (i=0; i < finances.length; i++) {
     numberArray.push(finances[i][1]); 
@@ -159,7 +159,7 @@ console.log("Month of Greatest Profit: " + dateOfMax + " ($" + max + ")");
 
 
 /*
-//Min Profit and Date Using reduce()
+//MIN PROFIT AND DATE USING reduce()
 let min = numberArray.reduce((accumulator, currentValue) => {
     if (currentValue < accumulator) {
         return currentValue 
@@ -175,6 +175,6 @@ for (i=0; i < finances.length; i++) {
     };
 } 
 console.log("Month of Greatest Loss: " + dateOfMin + " ($" + min + ")"); 
-
+ 
 console.log("comparison sep-2013"); 
 */ 
