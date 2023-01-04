@@ -103,7 +103,7 @@ console.log("Net profit over whole period: $" + netProfit);
 
 //Average profit
 const averageProfit = netProfit / numMonths; 
-console.log("Average profit per month: $" + averageProfit.toFixed(2)); 
+console.log("Average profit per month (rounded): $" + averageProfit.toFixed(2)); 
 
 //Greatest Profit with Math.max 
 let numberArray = []; 
