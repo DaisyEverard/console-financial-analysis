@@ -86,9 +86,26 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
-//jan-2010 to Feb-2017 
 
-//Greatest Profit with Math.max
+//console setup
+console.log("Financial Analysis");
+console.log("--------------"); 
+// #Months
+const numMonths = finances.length; 
+console.log("Number of Months: " + numMonths); 
+
+// Net Profit
+let netProfit = 0; 
+for (i=0; i < finances.length; i++) { 
+    netProfit += finances[i][1]; 
+}
+console.log("Net profit over whole period: $" + netProfit); 
+
+//Average profit
+const averageProfit = netProfit / numMonths; 
+console.log("Average profit per month: $" + averageProfit.toFixed(2)); 
+
+//Greatest Profit with Math.max 
 let numberArray = []; 
 for (i=0; i < finances.length; i++) {
     numberArray.push(finances[i][1]); 
@@ -101,5 +118,63 @@ for (i=0; i < finances.length; i++) {
         dateOfMax = finances[i][0];
     }; 
 }
+console.log("Month of Greatest Profit: " + dateOfMax + " ($" + max + ")"); 
 
-console.log("Month of Greatest Profit: " + dateOfMax + " (" + max + ")"); 
+
+
+//Greatest Loss with Math.min 
+let min = Math.min.apply(null, numberArray);
+
+let dateOfMin = ""; 
+for (i=0; i < finances.length; i++) { 
+    if (finances[i][1] === min) {
+        dateOfMin = finances[i][0];
+    }; 
+}
+console.log("Month of Greatest Loss: " + dateOfMin + " ($" + min + ")"); 
+
+
+//Max Profit and Date Using reduce()
+/*let numberArray = []; 
+for (i=0; i < finances.length; i++) {
+    numberArray.push(finances[i][1]); 
+}
+
+let max = numberArray.reduce((accumulator, currentValue) => {
+    if (currentValue > accumulator) {
+        return currentValue 
+     } else {
+         return accumulator; 
+     }
+}, 0) 
+
+let dateOfMax = ""; 
+for (i=0; i < finances.length; i++) { 
+    if (finances[i][1] === max) {
+        dateOfMax = finances[i][0];
+    };
+} 
+console.log("Month of Greatest Profit: " + dateOfMax + " ($" + max + ")"); 
+*/
+
+
+/*
+//Min Profit and Date Using reduce()
+let min = numberArray.reduce((accumulator, currentValue) => {
+    if (currentValue < accumulator) {
+        return currentValue 
+     } else {
+         return accumulator; 
+     }
+}, 0) 
+
+let dateOfMin = ""; 
+for (i=0; i < finances.length; i++) { 
+    if (finances[i][1] === min) {
+        dateOfMin = finances[i][0];
+    };
+} 
+console.log("Month of Greatest Loss: " + dateOfMin + " ($" + min + ")"); 
+
+console.log("comparison sep-2013"); 
+*/ 
