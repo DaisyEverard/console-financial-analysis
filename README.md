@@ -7,19 +7,25 @@ https://daisyeverard.github.io/console-financial-analysis/
 ## Description / How it works
 This is a tool to analyse an array of finanacial data with months and years provided in nested arrays. The output is: 
 1. The number of months covered
-2. The total profit over that period
+2. The Net profit over that period
 3. The average profit per month
-4. The month with and value of the greatest profit
+4. The average change in profit per month
 5. The month with and value of the greatest profit
+6. The month with the greatest increase
+7. The month with and value of the greatest profit
+8. The month with the greatest decrease
 
 Calculation of the values: 
 1. finances.length
 2. `for` loop adding all profits
 3. `2/1` To round to 2dp and show a value with a precision up to cents in a dollar, `toFixed(2)` was used
-4. `numberArray` was created with a for loop to store only numerical values and remove months
-`Math.max()` assigned the lowest value in `numberArray` to new variable `max`.
-Another for loop then found the month that `max` corresponded to and assigned that month (string) to `dateOfMax`; 
-5. Same as `4` except `numberArray` doesn't need defining again, and changing all mentions of `max` to `min`. 
+4. From index 1 of `finance`, sum (this month - last month)
+5. `numberArray` was created with a for loop to store only numerical values and remove months
+`Math.max()` assigned the highest value in `numberArray` to new variable `max`.
+Another for loop then found the month that `max` corresponded to and assigned that month (string) to `dateOfMax`;
+6. `changeArray` created using (this month - last month) figures. `Math.max()` for greatest value. This time the for loop finds one index higher in `finance` than in `changeArray`, as the first index of `finance` was omitted when creating `changeArray`.
+7. Same as 5 but with min, `numberArray` already defined.
+8. Same as 6 but with min, `changeArray` already defined.
 
 ## Issues and Solutions
 
