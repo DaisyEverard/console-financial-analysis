@@ -105,12 +105,20 @@ console.log("Net profit over whole period: $" + netProfit);
 const averageProfit = netProfit / numMonths; 
 console.log("Average profit per month (rounded): $" + averageProfit.toFixed(2)); 
 
+//Average changes in profit 
+let totalChanges = 0;
+for (i=1; i < finances.length; i++) {
+     totalChanges += finances[i][1] - finances[i-1][1]; 
+}
+const averageChange = totalChanges / (numMonths-1); 
+ console.log("Average change in profits (compared to previous month): $" + averageChange.toFixed(2)); 
+
 //Greatest Profit with Math.max 
 let numberArray = []; 
 for (i=0; i < finances.length; i++) {
     numberArray.push(finances[i][1]); 
 }
-const max = Math.max.apply(null, numberArray);
+const max = Math.max(...numberArray);
 
 let dateOfMax = ""; 
 for (i=0; i < finances.length; i++) { 
@@ -120,10 +128,24 @@ for (i=0; i < finances.length; i++) {
 }
 console.log("Month of Greatest Profit: " + dateOfMax + " ($" + max + ")"); 
 
+//Greatest increase
+let changeArray = []; 
+for (i=1; i < finances.length; i++) {
+    changeArray.push(finances[i][1] - finances[i-1][1]); 
+}
+const maxChange = Math.max(...changeArray);
+
+let dateOfMaxChange = ""; 
+for (i=0; i < finances.length; i++) { 
+    if (changeArray[i] === maxChange) {
+        dateOfMaxChange = finances[i+1][0];
+    }; 
+}
+console.log("Greatest Increase (compared to previous month): " + dateOfMaxChange + " ($" + maxChange + ")"); 
 
 
 //Greatest Loss with Math.min 
-const min = Math.min.apply(null, numberArray);
+const min = Math.min(...numberArray);
 
 let dateOfMin = ""; 
 for (i=0; i < finances.length; i++) { 
@@ -132,6 +154,17 @@ for (i=0; i < finances.length; i++) {
     }; 
 }
 console.log("Month of Greatest Loss: " + dateOfMin + " ($" + min + ")"); 
+
+
+//Greatest decrease
+const minChange = Math.min(...changeArray);
+let dateOfMinChange = ""; 
+for (i=0; i < finances.length; i++) { 
+    if (changeArray[i] === minChange) {
+        dateOfMinChange = finances[i+1][0];
+    }; 
+}
+console.log("Greatest Decrease (compared to previous month): " + dateOfMinChange + " ($" + minChange + ")"); 
 
 
 //MAX PROFIT AND DATE USING reduce()
@@ -178,3 +211,4 @@ console.log("Month of Greatest Loss: " + dateOfMin + " ($" + min + ")");
  
 console.log("comparison sep-2013"); 
 */ 
+

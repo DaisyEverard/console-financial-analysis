@@ -15,10 +15,13 @@
   <p>This is a tool to analyse an array of finanacial data with months and years provided in nested arrays. The output is:</p>
     <ol>
       <li>The number of months covered</li>
-      <li>The total profit over that period</li>
+      <li>The Net profit over that period</li>
       <li>The average profit per month</li>
+      <li>The average change in profit per month</li>
       <li>The month with and value of the greatest profit</li>
+      <li>The month with the greatest increase</li>
       <li>The month with and value of the greatest profit</li>
+      <li>The month with the greatest decrease</li>
     </ol>
 
   <h4>Calculation of the values:</h4>
@@ -27,10 +30,15 @@
       <li>finances.length</li>
       <li>for loop adding all profits</li>
       <li>2/1 To round to 2dp and show a value with a precision up to cents in a dollar, toFixed(2) was used</li>
+      <li>add up, from index 1 of finance, this month - last month</li>
       <li>numberArray was created with a for loop to store only numerical values and remove months Math.max()
-        assigned the lowest value in numberArray to new variable max. Another for loop then found the month that
+        assigned the highest value in numberArray to new variable max. Another for loop then found the month that
         max corresponded to and assigned that month (string) to dateOfMax;</li>
-      <li>Same as 4 except numberArray doesn't need defining again, and changing all mentions of max to min.</li>
+        <li>changeArray created using (this month - last month) figures. Math.max for greatest value.
+          This time the for loop finds one index higher in finance than in changeArray.  
+        </li>
+      <li>Same as 5 but with min, numberArray already defined.</li>
+      <li>Same as 6 but with min, changeArray already defined.</li>
     </ol>
 
 
