@@ -4,6 +4,12 @@
 
 https://daisyeverard.github.io/console-financial-analysis/
 
+## Preview
+
+<p align="center">
+  <img src="./assets/preview.png" width="800" alt="screenshot of site">
+</p>
+
 ## Description / How it works
 This is a tool to analyse an array of finanacial data with months and years provided in nested arrays. The output is: 
 1. The number of months covered
