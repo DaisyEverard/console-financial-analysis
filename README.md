@@ -1,4 +1,5 @@
 # Financial Analysis
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Link to site
 
@@ -10,7 +11,15 @@ https://daisyeverard.github.io/console-financial-analysis/
   <img src="./assets/preview.png" width="800" alt="screenshot of site">
 </p>
 
-## Description / How it works
+## Table of Contents
+
+- [Description](#description)
+- [Calculations](#calculations)
+- [Technologies](#technologies)
+- [Issues and Solutions](#issues-and-solutions)
+- [Contacts](#contacts)
+
+## Description
 This is a tool to analyse an array of finanacial data with months and years provided in nested arrays. The output is: 
 1. The number of months covered
 2. The Net profit over that period
@@ -21,7 +30,7 @@ This is a tool to analyse an array of finanacial data with months and years prov
 7. The month with and value of the greatest profit
 8. The month with the greatest decrease
 
-Calculation of the values: 
+## Calculations
 1. finances.length
 2. `for` loop adding all profits
 3. `2/1` To round to 2dp and show a value with a precision up to cents in a dollar, `toFixed(2)` was used
@@ -32,6 +41,11 @@ Another for loop then found the month that `max` corresponded to and assigned th
 6. `changeArray` created using (this month - last month) figures. `Math.max()` for greatest value. This time the for loop finds one index higher in `finance` than in `changeArray`, as the first index of `finance` was omitted when creating `changeArray`.
 7. Same as 5 but with min, `numberArray` already defined.
 8. Same as 6 but with min, `changeArray` already defined.
+
+## Technologies
+
+- HTML
+- JavaScript
 
 ## Issues and Solutions
 
@@ -53,6 +67,13 @@ let max = Math.max.apply(null, numberArray);
 console.log(max); </code>
 
 - Use a comparitive function in `.reduce()`
+
+## Contacts
+
+- GitHub: [DaisyEverard](https://github.com/DaisyEverard)
+- LinkedIn: [daisy-everard](https://www.linkedin.com/in/daisy-everard/)
+- Email: msdeverard@gmail.com
+
 
 ## License
 
